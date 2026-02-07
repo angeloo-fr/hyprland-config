@@ -1,0 +1,219 @@
+/* 
+ * Waybar configuration made by: Ruben_&_Linux:~ for Arch Linux in 2025
+ */
+
+/* Reset all styles */
+* {
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/* The whole bar */
+#waybar {
+    color: #dedede;
+    background-color: rgba(46,52,64,0.6);
+    border-radius: 5px;
+    font-family:JetBrainsMonoNerdFont;
+    font-size: 13px;
+   }
+
+*:hover {
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+.modules-left > widget:first-child > * {
+    margin-left: 15px;
+}
+.modules-right > widget:last-child > * {
+    margin-right: 15px;
+}
+tooltip label {
+    font-family:JetBrainsMonoNerdFont;
+    font-size: 13px;
+}
+
+/* 
+ * Module styles
+ */
+
+/* Common module settings*/
+#window,
+#hyprland-workspaces,
+#network,
+#cpu,
+#temperature,
+#disk,
+#memory,
+#pulseaudio,
+#battery,
+#idle_inhibitor,
+#backlight,
+#bluetooth,
+#tray,
+#clock,
+#custom-launcher,
+#custom-settings,
+#custom-keyboard-layout,
+#custom-power {
+    background: rgba(46,52,64,0.6);
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.8);
+    padding:.1rem 1rem;
+    margin: 1px 1px;
+}
+
+#window:hover,
+#hyprland-workspaces:hover,
+#network:hover,
+#cpu:hover,
+#temperature:hover,
+#disk:hover,
+#memory:hover,
+#pulseaudio:hover,
+#battery:hover,
+#idle_inhibitor:hover,
+#backlight:hover,
+#bluetooth:hover,
+#tray:hover,
+#tray .active:hover,
+#clock:hover,
+#custom-launcher:hover,
+#custom-settings:hover,
+#custom-keyboard-layout:hover,
+#custom-power:hover {
+    background: rgba(129,161,193,0.8);
+    box-shadow: 0 0 10px rgba(0,0,0,0.8);
+}
+
+#custom-launcher,
+#window,
+#network {
+    background: transparent;
+    box-shadow: none;
+}
+
+#custom-launcher,
+#custom-power {
+    padding-right: 1.1rem;
+}
+
+#workspaces:hover {
+    background: none;
+}
+
+#workspaces button {
+    border-radius: 5px;
+    padding: 0px 6px;
+    margin-right: 2px;
+    margin-left: 2px;
+}
+
+#workspaces button.focused {
+    border: 0.9px solid #eceff4;
+}
+
+#custom-settings:hover {
+    background-image: url('chevron-right.svg');
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+#window {
+    border-style: hidden;
+    margin-top: 1px;
+}
+
+#cpu.warning,
+#memory.warning,
+#battery.warning {
+    color: #d08770;
+    background: rgba(208,135,112,0.1);
+}
+
+#cpu.warning:hover,
+#memory.warning:hover,
+#battery.warning:hover {
+    background: rgba(208,135,112,0.3);
+}
+
+#workspaces button.urgent,
+#network.disabled,
+#network.disconnected,
+#cpu.critical,
+#memory.critical,
+#temperature.critical,
+#battery.critical {
+    color: #bf616a;
+    background: rgba(191,97,106,0.1);
+}
+
+#workspaces button.urgent:hover,
+#network.disabled:hover,
+#network.disconnected:hover,
+#cpu.critical:hover,
+#memory.critical:hover,
+#temperature.critical:hover,
+#battery.critical:hover {
+    background: rgba(191,97,106,0.3);
+}
+
+@keyframes blink {
+    to {
+        color: #4c566a;
+        background-color: #eceff4;
+    }
+}
+
+#battery.critical:not(.charging) {
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+/* --- Arreglo para Grupos (Power y Settings) --- */
+#power-drawer,
+#settings-drawer {
+    margin-right: 10px;
+    padding: 0 5px;
+}
+
+/* Forzar separación entre TODOS los módulos de la derecha */
+.modules-right > widget > * {
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+/* Estilo para los botones individuales dentro del menú de apagado */
+#custom-power,
+#custom-reboot,
+#custom-reboot-uefi,
+#custom-log-off,
+#custom-suspend,
+#custom-lock {
+    background: rgba(46,52,64,0.9); /* Un poco más sólido para que resalte */
+    border-radius: 8px;
+    padding: 2px 12px;
+    margin: 0 4px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+/* Efecto Hover específico para los botones de apagado */
+#custom-power:hover,
+#custom-reboot:hover,
+#custom-reboot-uefi:hover,
+#custom-log-off:hover,
+#custom-suspend:hover,
+#custom-lock:hover {
+    background: #bf616a; /* Rojo nórdico para resaltar que es una acción de energía */
+    color: #ffffff;
+}
+
+/* Ajuste fino para el Tray (iconos de sistema) */
+#tray {
+    padding: 0 10px;
+    margin-left: 10px;
+}
